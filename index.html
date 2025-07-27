@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecionar para Redes Sociais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .btn {
+      background-color: #3897f0;
+      color: white;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #2b78c6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Redirecionar para Redes Sociais</h1>
+  <div id="buttons-container"></div>
+
+  <script>
+    const perfisInstagram = [
+      { nome: "Fênix Multicoisas", url: "https://www.instagram.com/fenix_multicoisas" },
+      { nome: "Roberta Otcham", url: "https://www.instagram.com/robertaotcham" }
+    ];
+
+    const container = document.getElementById('buttons-container');
+
+    perfisInstagram.forEach(perfil => {
+      const a = document.createElement('a');
+      a.href = perfil.url;
+      a.target = "_blank";
+      a.className = "btn";
+      a.textContent = perfil.nome;
+      container.appendChild(a);
+    });
+  </script>
+</body>
+</html>
