@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Redirecionar para Redes Sociais</title>
+  <title>Perfis em Destaque</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,10 +14,18 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      text-align: center;
     }
     h1 {
+      margin-bottom: 10px;
+      color: #222;
+      font-size: 28px;
+    }
+    .chamada {
+      font-size: 18px;
+      color: #555;
       margin-bottom: 30px;
-      color: #333;
+      max-width: 400px;
     }
     .btn {
       background-color: #3897f0;
@@ -39,18 +46,20 @@
   </style>
 </head>
 <body>
-  <h1>Redirecionar para Redes Sociais</h1>
+  <h1>Você Precisa Conhecer Esses Perfis Agora!</h1>
+  <p class="chamada">Perfis incríveis e cheios de personalidade. Clique e descubra por que eles estão se destacando!</p>
+
   <div id="buttons-container"></div>
 
   <script>
-    const perfisInstagram = [
+    const perfis = [
       { nome: "Fênix Multicoisas", url: "https://www.instagram.com/fenix_multicoisas" },
       { nome: "Roberta Otcham", url: "https://www.instagram.com/robertaotcham" }
     ];
 
     const container = document.getElementById('buttons-container');
 
-    perfisInstagram.forEach(perfil => {
+    perfis.forEach(perfil => {
       const a = document.createElement('a');
       a.href = perfil.url;
       a.target = "_blank";
