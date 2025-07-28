@@ -52,22 +52,32 @@
   <div id="buttons-container"></div>
 
   <script>
-    const perfis = [
-      { nome: "Fênix Multicoisas", url: "https://www.instagram.com/fenix_multicoisas" },
-      { nome: "Robertao tcham", url: "https://www.instagram.com/robertaotcham" },
-      { nome:"Dra larissa saib",url:"https://www.instagram.com/dralarissasaib/"},
-    ];
+  const perfis = [
+    { nome: "Fênix Multicoisas", url: "https://www.instagram.com/fenix_multicoisas" },
+    { nome: "Robertao tcham", url: "https://www.instagram.com/robertaotcham" },
+    { nome:"Dra larissa saib", url:"https://www.instagram.com/dralarissasaib/" },
+  ];
 
-    const container = document.getElementById('buttons-container');
+  // Função de embaralhamento (Fisher-Yates)
+  function embaralhar(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
-    perfis.forEach(perfil => {
-      const a = document.createElement('a');
-      a.href = perfil.url;
-      a.target = "_blank";
-      a.className = "btn";
-      a.textContent = perfil.nome;
-      container.appendChild(a);
-    });
-  </script>
+  embaralhar(perfis); // Embaralha os perfis
+
+  const container = document.getElementById('buttons-container');
+
+  perfis.forEach(perfil => {
+    const a = document.createElement('a');
+    a.href = perfil.url;
+    a.target = "_blank";
+    a.className = "btn";
+    a.textContent = perfil.nome;
+    container.appendChild(a);
+  });
+</script>
 </body>
 </html>
